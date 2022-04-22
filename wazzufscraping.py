@@ -92,17 +92,18 @@ with open("C:/Users/User/Desktop/web_scraping/data/data.csv","w") as myfile:#ope
 #jobtitle=[title1,title2.....]
 links=[]
 for i in range(len(job_titles)):
-    x="https://wuzzuf.net"
-    links.append(x+job_titles[i].find("a").attrs['href'])
+  
+    links.append(job_titles[i].find("a").attrs['href'])
 
 
 # now i get all the links 
 salary=[]
 for link in links:
-    result=requests.get(link)
+    result=requests.get("https://wuzzuf.net/jobs/p/ItXgcrG6BIJb-Python-Developer-FlairsTech-Cairo-Egypt?o=1&l=sp&t=sj&a=python|search-v3|navbg")
     src=result.content
     soup=BeautifulSoup(src,"lxml")
-    salaries=soup.find("span",{"class":"css-4xky9y"})
+    salaries=soup.find_all("span",{"class":"css-4xky9y"})
     print(salaries)
+    break;
 
 

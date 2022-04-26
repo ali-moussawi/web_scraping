@@ -20,11 +20,14 @@ work_input.pack()
 h1=Label(window,text="",height=2,font=("Arial",15))
 h1.pack() # place it in window
 
+
 def search():
 	#get the text
 	val=work_var.get()
+	h2=Label(window,text="",height=2,font=("Arial",15))
+	h2.pack() # place it in window
 	if (val==""):
-		h2=Label(window,text=f"please enter a job name to search ",height=2,font=("Arial",15))
+		h2=Label(window,text=f"please enter a job name to search ",height=1,font=("Arial",10))
 		h2.pack() 
 		return
 	else:
@@ -39,7 +42,6 @@ h1=Label(window,text="",height=2,font=("Arial",15))
 h1.pack() # place it in window
 btn=Button(window,text="search",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="white",activebackground="black",command=search)
 btn.pack()
-
 
 window.mainloop() ## run app infinitely
 

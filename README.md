@@ -6,3 +6,9 @@ we fetch from this website a very usefull data like :
 2- company name
 3- location of job
 4- skills needed for job
+
+
+## second scraping done on indeed website where user can :
+1-enter the name of the job 
+2-enter the location of the job 
+after entering this data,  a  new file will be created containing all needed information about the job 

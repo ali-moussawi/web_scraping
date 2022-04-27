@@ -3,9 +3,17 @@ our project aimed to make a script on a target job website to get a needed data 
 so in order to achieve ou target  we use 4 modules
 1st requests = give it url to get all content about the website page provided by the url
 2nd BeautifulSoup = this module used to control the data or content gathered by the request module
+ it is a python library for pulling data out of HTML and XML files. It creates data parse trees in order to get data easily.
 3rd csv = used to work with the excell or work sheet in order to write, read data from them
 4th itertools = it gives very usefull tools that help you in dealing with lists and comine them in the way you need
 5th tkinter = its a gui module that pretty our app and gives a user interface veiw
+
+In computer technology, a parser is a program, usually part of a compiler,
+ that receives input in the form of sequential source program instructions, interactive online commands, markup tags, 
+ or some other defined interface and breaks them up into parts (for example, the nouns (objects), verbs (methods), a
+ nd their attributes or options) that can then be managed by other programming 
+ (for example, other components in a compiler).
+ A parser may also check to see that all input has been provided that is necessary.
 """
 import requests
 from bs4 import BeautifulSoup

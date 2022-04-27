@@ -20,8 +20,18 @@ work_input.pack()
 h1=Label(window,text="",height=2,font=("Arial",15))
 h1.pack() # place it in window
 
+def searchindeed():
+	
+	window1=Tk()
 
-def search():
+	window1.title("indeed")
+	window1.geometry("300x300")
+
+	window1.mainloop()
+	window.destroy
+	
+
+def searchwazzuf():
 	#get the text
 	val=work_var.get()
 	h2=Label(window,text="",height=2,font=("Arial",15))
@@ -40,9 +50,10 @@ def search():
 # create the button
 h1=Label(window,text="",height=2,font=("Arial",15))
 h1.pack() # place it in window
-btn=Button(window,text="search",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="white",activebackground="black",command=search)
+btn=Button(window,text="search with wazzuf",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="white",activebackground="black",command=searchwazzuf)
 btn.pack()
-
+h1=Label(window,text="",height=1,font=("Arial",15))
+h1.pack() 
+btn=Button(window,text="search with Indeed",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="white",activebackground="black",command=searchindeed)
+btn.pack()
 window.mainloop() ## run app infinitely
-
-

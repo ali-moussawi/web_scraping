@@ -23,7 +23,7 @@ from itertools import zip_longest # used to pick item from each list and put the
 
 def search_indeed(work,location="lebanon"):
     count=10
-    while(count<11):
+    while(count<31):
         result = requests.get(f"https://www.indeed.com/jobs?q={work}&l={location}&start={count}")
         src=result.content
         soup = BeautifulSoup(src, 'html.parser')

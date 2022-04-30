@@ -92,10 +92,15 @@ def searchwazzuf():
 
 	else:
 		searchfor=(work_var.get()).replace(".","")
-		wazzufscraping.search_wazzuf(searchfor)
-	
-		h2=Label(window,text=f"more than 100 {searchfor} job has been added to your file ",height=2,font=("Arial",15))
-		h2.pack() # place it in window
+		try:
+			wazzufscraping.search_wazzuf(searchfor)
+		except Exception:
+			
+			h2=Label(window,text="No Internet !",height=2,font=("Arial",15))
+			h2.pack() # place it in window
+		else:
+			h2=Label(window,text=f"more than 100 {searchfor} job has been added to your file ",height=2,font=("Arial",15))
+			h2.pack() # place it in window
 
 	############################### end wazzuf################################
 
@@ -112,10 +117,14 @@ def searchindeed():
 	else:
 		searchfor=(work_var.get()).replace(".","")
 		location=location_var.get()
-		indeedscraping.search_indeed(searchfor,location)
-	
-		h2=Label(window,text=f"{searchfor} jobs has been added to your file ",height=2,font=("Arial",15))
-		h2.pack() # place it in window
+		try:
+			indeedscraping.search_indeed(searchfor,location)
+		except Exception:
+			h2=Label(window,text="No Internet !",height=2,font=("Arial",15))
+			h2.pack() # place it in window
+		else :
+			h2=Label(window,text=f"{searchfor} jobs has been added to your file ",height=2,font=("Arial",15))
+			h2.pack() # place it in window
 
 
 
@@ -138,3 +147,51 @@ btn.pack()
 
 
 window.mainloop() ## run app infinitely
+
+
+
+
+
+
+
+
+
+
+
+
+# try:
+	# pass
+#except Exception:
+ 	# pass
+#except Exception:
+ 	# pass
+
+#else :
+	# pass
+
+#finally :
+	# pass
+
+
+# why we need error handling :
+# when we try something in python and it goes error
+# a usefull information are appered when error is happened
+# but if we would not want something like this to appear
+# or desplayed to the people who are using our software
+# so if we can expect that there is an code that will throw 
+# an error, then we can use these try and accept blocks 
+# to handle them in the way we want.
+# try:
+	# f=open('testfile.txt'):will throw error if file not found 
+#1 except Exception:      Exception= type of Exception
+ 	# print(sorry file not found)
+#2 except Exception as e:      Exception = type of Exception
+ 	# print(e)   e=the exeptio he catches
+ 	# we can add more and more 
+
+
+#else :
+	# if no exception is thrown
+
+#finally :
+	# runs no matter is happen

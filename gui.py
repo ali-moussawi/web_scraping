@@ -91,14 +91,14 @@ h1=Label(window,text="",height=2,font=("Arial",15),bg="black")
 h1.pack() # place it in window
 
 
-btn=Button(window,text="search with wazzuf",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="white",activebackground="black",command=searchwazzuf)
+btn=Button(window,text="search with wazzuf",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="black",activebackground="white",command=searchwazzuf)
 btn.pack()
 
 h1=Label(window,text="",height=1,font=("Arial",15),bg="black")
 h1.pack() 
 
 
-btn=Button(window,text="search with Indeed",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="white",activebackground="black",command=searchindeed)
+btn=Button(window,text="search with Indeed",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="black",activebackground="white",command=searchindeed)
 btn.pack()
 
 

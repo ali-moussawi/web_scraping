@@ -380,9 +380,7 @@ def search_wazzuf(work):
 
 
 
-    i=8
-    while (i<12):
-           result1 = requests.get(f"https://wuzzuf.net/search/jobs/?a=hpb&q={work}&start={i}")
+    result1 = requests.get(f"https://wuzzuf.net/search/jobs/?a=hpb&q={work}&start=8")
 
 
     src=result1.content
@@ -424,9 +422,55 @@ def search_wazzuf(work):
     with open(f"C:/Users/User/Desktop/web_scraping/data/{work}.csv","a") as myfile:
         wr=csv.writer(myfile)
         wr.writerows(exported)
-        i+=1
+        
 
 
+    result1 = requests.get(f"https://wuzzuf.net/search/jobs/?a=hpb&q={work}&start=9")
+
+
+    src=result1.content
+
+
+
+    soup=BeautifulSoup(src,"lxml")
+
+
+
+    job_titles=soup.find_all("h2",{"class":"css-m604qf"})
+    #find all will return list
+    # print(job_titles)
+    company_names=soup.find_all("a",{"class":"css-17s97q8"})
+    # print(company_name)
+    location_names=soup.find_all("span",{"class":"css-5wys0k"})
+    # print(location_names)
+    job_skills=soup.find_all("div",{"class":"css-y4udm8"})
+    # print(job_skills)
+
+    job_title=[]
+    company_name=[]
+    location_name=[]
+    skills=[]
+    links=[]
+
+
+    for i in range(len(job_titles)):
+       job_title.append(job_titles[i].text)
+       links.append("https://wuzzuf.net"+job_titles[i].find("a").attrs['href'])
+       company_name.append(company_names[i].text)
+       location_name.append(location_names[i].text)
+       skills.append(job_skills[i].text)
+
+
+    file_list=[job_title,company_name,location_name,skills,links]
+    exported=zip_longest(*file_list)
+
+    with open(f"C:/Users/User/Desktop/web_scraping/data/{work}.csv","a") as myfile:
+        wr=csv.writer(myfile)
+        wr.writerows(exported)
+
+   
+        
+        
 
 
 

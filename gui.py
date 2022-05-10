@@ -1,6 +1,7 @@
 from tkinter import *
 import wazzufscraping 
 import indeedscraping
+import threading
 window=Tk()
 
 window.title("find job")
@@ -100,7 +101,6 @@ h1.pack()
 
 btn=Button(window,text="search with Indeed",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="black",activebackground="white",command=searchindeed)
 btn.pack()
-
 
 
 

@@ -6,11 +6,11 @@ window=Tk()
 
 window.title("find job")
 
-window.geometry("500x500")
+window.geometry("500x700")
 
 window.configure(bg='black') 
 
-
+window.resizable(False,True)
 h1=Label(window,text="please enter the job you want to search for :",height=2,font=("Arial",15),fg='#e91e63',bg="black")
 h1.pack() # place it in window
 
@@ -78,7 +78,7 @@ def searchindeed():
 		try:
 			indeedscraping.search_indeed(searchfor,location)
 		except Exception:
-			h2=Label(window,text="No Internet !",height=2,font=("Arial",15),bg="black",fg="white")
+			h2=Label(window,text="added a new file but some links are not working !",height=2,font=("Arial",15),bg="black",fg="white")
 			h2.pack() # place it in window
 		else :
 			h2=Label(window,text=f"{searchfor} jobs has been added to your file ",height=2,font=("Arial",15),bg="black",fg="white")

@@ -1,7 +1,28 @@
 from tkinter import *
 import wazzufscraping 
 import indeedscraping
+import time
 import threading
+
+window0=Tk()
+window0.title("home")
+window0.geometry("600x700")
+window0.configure(bg='black') 
+h1=Label(window0,text="some recommanded works :",height=2,font=("Arial",30),fg='white',bg="black")
+h1.pack()
+category1 =["Accounting/Finance","Engineering","Writing/Editorial","IT/Software Development","Manufacturing/Production","Banking","Sports and Leisure","Purchasing/Procurement"]
+category2 =["marketing","pharmaceutical","telecom","tourism","writing","healthcare","engineering oil","teaching"]
+for i in range(len(category1)):
+	Button(window0, text="-"+category1[i],width=600,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="black",activebackground="white",command=window0.destroy).pack()
+	Button(window0, text="-"+category2[i],width=600,height=1,bg="#e91e63",fg="white",borderwidth=0,activeforeground="black",activebackground="white",command=window0.destroy).pack()
+	
+h1=Label(window0,text="",height=1,font=("Arial",15),fg='#e91e63',bg="black")
+h1.pack()
+Button(window0, text="Next",width=20,height=2,bg="#e91e63",fg="white",borderwidth=0,activeforeground="black",activebackground="white", command=window0.destroy).pack()
+window0.mainloop()
+
+
+
 window=Tk()
 
 window.title("find job")
@@ -57,7 +78,7 @@ def searchwazzuf():
 			h2=Label(window,text="No Internet !",height=2,font=("Arial",15),bg="black",fg="white")
 			h2.pack() # place it in window
 		else:
-			h2=Label(window,text=f"more than 100 {searchfor} job has been added to your file ",height=2,font=("Arial",15),bg="black",fg="white")
+			h2=Label(window,text=f" {searchfor} job has been added to your file ",height=2,font=("Arial",15),bg="black",fg="white")
 			h2.pack() # place it in window
 
 

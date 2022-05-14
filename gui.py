@@ -32,7 +32,7 @@ window.geometry("500x700")
 window.configure(bg='black') 
 
 window.resizable(False,True)
-h1=Label(window,text="please enter the job you want to search for :",height=2,font=("Arial",15),fg='#e91e63',bg="black")
+h1=Label(window,text="please enter the job you want to search for :",height=1,font=("Arial",15),fg='#e91e63',bg="black")
 h1.pack() # place it in window
 
 h1=Label(window,text="",height=2,font=("Arial",15),bg="black")

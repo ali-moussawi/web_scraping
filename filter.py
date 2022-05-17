@@ -49,12 +49,8 @@ def filter():
 
 	title=df.loc[:,"job title"].values
 
-	# print(experience)
-	# print(title)
-
-	# plt.figure()
-
-	plt.plot(exp,title)
+	number=len(experience)
+	plt.hist(experience, bins = number)
 	plt.show()
 
 
